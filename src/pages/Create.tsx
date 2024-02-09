@@ -34,7 +34,24 @@ const Tab2: React.FC = () => {
           </div>
         </div>
         <div className="calendar-container">
-          <Calendar onChange={(value) => setDate(date)}/>
+          <Calendar onChange={(value) => setDate(date)}
+            calendarType="US"
+            locale="en-US"
+            showNeighboringMonth
+            
+        
+            
+            tileClassName={({ date, view }) => {
+              // Estilos del día seleccionado
+              if (date instanceof Date && date.toDateString() === new Date().toDateString()) {
+                return 'react-calendar__tile--now';
+              }
+              return '';
+            }}
+            prev2Label={null}
+            next2Label={null}
+            navigationAriaLabel="Calendar navigation"
+          />
         </div>
       </IonContent>
     </IonPage>
