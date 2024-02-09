@@ -11,7 +11,7 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { addCircle, body, book, calendar, ellipse, fileTray, home, settingsOutline, shirt, square, triangle } from 'ionicons/icons';
+import { addCircle, body, book, calendar, ellipse, fileTray, home, pencil, settingsOutline, shirt, square, triangle } from 'ionicons/icons';
 //import LandingPage from './pages/LandingPage'
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -93,8 +93,8 @@ const App: React.FC = () => (
           </IonTabButton>
           
           <IonTabButton tab="tab4" href="/add">
-            <IonIcon aria-hidden="true" icon={addCircle} />
-            <IonLabel>Add</IonLabel>
+            <IonIcon aria-hidden="true" icon={pencil} />
+            <IonLabel>Post it!</IonLabel>
           </IonTabButton>
         </IonTabBar>
         

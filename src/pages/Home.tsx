@@ -14,7 +14,6 @@ import {
   setupIonicReact,
   IonLabel,
   IonIcon
-
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { addCircle, body, book, calendar, ellipse, fileTray, home, settingsOutline, shirt, square, triangle } from 'ionicons/icons';
@@ -75,8 +74,6 @@ const Tab1: React.FC = () => {
           </div>
       {/* Botón para volver a la página de login */}
         </div>
-
-
 
 
       <div className="buttons-container">
