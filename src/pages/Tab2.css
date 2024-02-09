@@ -48,75 +48,17 @@
     justify-content: center;
 } */
 
-.calendar-container {
-    margin-top: 20px;
-    text-align: center;
-  }
-
-  /* Estilos generales del calendario */
-.react-calendar {
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Alinear los días de la semana con las celdas */
-.react-calendar__month-view__weekdays {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-
-  /* Estilos de los días de la semana */
-  .react-calendar__month-view__weekdays__weekday abbr {
-    width: 50px; /* Ajusta el ancho de cada celda de día de la semana según sea necesario */
-  text-align: center; /* Centra el texto dentro de cada celda */
-    /*color: #555;*/
-  }
-
- 
-  
-/* Aumentar el tamaño de las celdas del calendario */
-.react-calendar__tile {
-    width: 50px; /* Ajusta el ancho según sea necesario */
-    height: 70px; /* Ajusta la altura según sea necesario */
-    font-size: 16px; /* Ajusta el tamaño de la fuente según sea necesario */
-  }
-
-  /* Estilos del día seleccionado */
-  .react-calendar__tile--active {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  /* Estilos del día actual */
-  .react-calendar__tile--now {
-    
-    background-color: #f0f0f0;
-    color: #333;
-  }
-  
-  /* Estilos de los botones de navegación */
-  .react-calendar__navigation button {
-    
-    font-size: 20px; /* Ajusta el tamaño de la fuente según sea necesario */
-    background-color: transparent;
-    color: #007bff;
-    border: none;
-    width: 100px; /* Ajusta el ancho de los botones según sea necesario */
-    height: 40px; /* Ajusta la altura de los botones según sea necesario */
-    margin: auto;
+.rbc-event {
+    background: yellow;
+    padding: 10px;
 }
-  
-/* Estilos adicionales para las celdas del calendario */
-/*.react-calendar__month-view__days__day {
-    padding: 20px; /* Añade relleno para resaltar las celdas */
-     /* Color de fondo */
-/*    border-radius: 10px; /* Añade bordes redondeados */
-/*    cursor: pointer; /* Cambia el cursor al pasar por encima */
-/*}*/
-  
-.react-calendar__month-view__days__day {
-    margin: 2px; /* Ajusta el valor según sea necesario */
-    flex: 1; 
-    min-width: 0;
-}  
-  
+
+.rbc-active {
+    background: yellow !important;
+    padding: 10px;
+}
+
+.rbc-day-bg {
+    background: wheat;
+    padding: 40px;
+}
