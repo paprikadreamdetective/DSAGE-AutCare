@@ -47,3 +47,7 @@
     display: flex;
     justify-content: center;
 } */
+
+.calendar-container {
+    margin-top: 20px;
+  }

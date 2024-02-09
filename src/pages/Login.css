@@ -79,12 +79,12 @@ ion-content::part(background) {
     color: #ffffff;
     font-style: normal;
     font-weight: 600;
-    margin: 25px;
+    margin: 15px;
     
 }
 
 .button-signin-logout .button-inner{
-    font-size: 36px;
+    font-size: 16px;
 }
 
 .button-signin .button-inner{

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonViewDidEnter } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab2.css';
-
+import Calendar from 'react-calendar';
 import { Person } from '../models/person.model'
 import cloud_icon from '../assets/cloud.png'
 
@@ -10,10 +10,14 @@ import cloud_icon from '../assets/cloud.png'
 const Tab2: React.FC = () => {
   
   const [people, setPeople] = useState<Person[]>([]);
-  
-  // useIonViewDidEnter(async () => {
+  const [date, setDate] = useState<Date | Date[]>(new Date());
 
-  // })
+  const onChange = (date: Date | null) => {
+    if (date !== null) {
+      setDate(date);
+    }
+    // Aquí puedes hacer algo con la fecha seleccionada, como cargar datos específicos, etc.
+  };
   
   return (
     <IonPage>
@@ -29,7 +33,9 @@ const Tab2: React.FC = () => {
               <p>Casual</p>
           </div>
         </div>
-        
+        <div className="calendar-container">
+          <Calendar onChange={(value) => setDate(date)}/>
+        </div>
       </IonContent>
     </IonPage>
   );

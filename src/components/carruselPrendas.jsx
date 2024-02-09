@@ -5,7 +5,7 @@ import "react-multi-carousel/lib/styles.css";
 import cloud_icon from '../assets/cloud.png'
 import './carruselPrendas.css'
 
-//import { db } from "../firebaseConfig";
+import { db } from "../firebaseConfig";
 
 import PropTypes from 'prop-types';
 

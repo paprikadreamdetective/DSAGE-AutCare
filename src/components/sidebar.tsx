@@ -12,17 +12,17 @@ const Sidebar = () => {
     <>
     <div className="sidebar">
         <IonList lines="none">
-            <IonItem href='/#'>
+            <IonItem href='/home'>
                 <IonLabel>Home</IonLabel>
             </IonItem>
-            <IonItem href='/#'>
+            <IonItem href='/create'>
                 <IonLabel>Planner Book</IonLabel>
             </IonItem>
-            <IonItem href='/#'>
-                <IonLabel>Wardrobe</IonLabel>
+            <IonItem href='/wardrobe'>
+                <IonLabel>Management</IonLabel>
             </IonItem>
-            <IonItem href='/#'>
-                <IonLabel>Add</IonLabel>
+            <IonItem href='/add'>
+                <IonLabel>Post it!</IonLabel>
             </IonItem>
         </IonList>
     </div>

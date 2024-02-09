@@ -51,7 +51,12 @@ const Tab1: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
+        <div className="content-wrapper">
+          <div className="sidebar">
+            <Sidebar></Sidebar>
+          </div>
         <div className="content">
+          
           <div className="weather-section">
             <WeatherApp></WeatherApp>
           </div>
@@ -73,11 +78,12 @@ const Tab1: React.FC = () => {
             </div>
           </div>
       {/* Botón para volver a la página de login */}
-        </div>
-
-
       <div className="buttons-container">
         <IonButton className='button-signin-logout' onClick={handleBackToLogin}>Logout</IonButton>
+
+      </div>
+        </div>
+
 
       </div>
       </IonContent>

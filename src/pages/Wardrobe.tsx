@@ -10,7 +10,7 @@ const Tab3: React.FC = () => {
     <IonPage>
       <IonContent fullscreen>
 
-        <div className="section-title">
+        {/*<div className="section-title">
           Accesories
         </div>
         <CarruselPrendas
@@ -46,7 +46,7 @@ const Tab3: React.FC = () => {
         </div>
         <CarruselPrendas
           categoria='shoes'
-        ></CarruselPrendas>
+  ></CarruselPrendas>*/}
 
 
       </IonContent>
