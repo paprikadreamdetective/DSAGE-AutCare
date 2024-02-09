@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonViewDidEnter } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonViewDidEnter, IonButton } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab2.css';
 import { Person } from '../models/person.model'
@@ -70,19 +70,10 @@ const Tab2: React.FC = () => {
   };
 
   return (
-    <div
+   /* {/*<div
     style={{
-     /* height: "95vh",
-      display: "flex",
-      //flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",*/
-      
       height: "95vh",
       width: "80vw",
-      //display: "flex",
-      //flexDirection: "column",
-      //justifyContent: "center",
       alignItems: "center",
       margin: "auto"
     }}
@@ -92,16 +83,12 @@ const Tab2: React.FC = () => {
         localizer={localizer}
         events={events}
         views={["month", "week", "day"]}
-        // view={"month"}
-        //date={dayjs("2023-12-19T12:00:00").toDate()}
         date={currentDate}
         toolbar={true}
         defaultView="month"
         onNavigate={handleNavigate}
-        //min={dayjs("2023-12-23T08:00:00").toDate()}
-       // max={dayjs("2023-12-23T18:00:00").toDate()}
-       components={components}
-       style={{ maxWidth: "50%" }}
+        components={components}
+        style={{ maxWidth: "50%" }}
         formats={{
           dayHeaderFormat: (date) => {
             console.log(date);
@@ -109,6 +96,31 @@ const Tab2: React.FC = () => {
           },
         }}
       />
+      </div>*///}
+
+    <div style={{ display: "flex", height: "100%" }}>
+      <div style={{ flex: 3, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+        <IonButton routerLink="/home">Volver al inicio</IonButton>
+      </div>
+      <div style={{ flex: 15, display: "flex", justifyContent: "center", alignItems: "center", height: "90vh" , margin: "auto"}}>
+        <Calendar
+          localizer={localizer}
+          events={events}
+          views={["month", "week", "day"]}
+          date={currentDate}
+          toolbar={true}
+          defaultView="month"
+          onNavigate={handleNavigate}
+          components={components}
+          style={{ maxWidth: "50%" }}
+          formats={{
+            dayHeaderFormat: (date) => {
+              console.log(date);
+              return dayjs(date).format("DD/MM/YYYY");
+            },
+          }}
+        />
+      </div>
     </div>
   );
 };
