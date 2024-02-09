@@ -48,17 +48,59 @@
     justify-content: center;
 } */
 
-.rbc-event {
-    background: yellow;
-    padding: 10px;
+.rbc-toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-bottom: 10px; /* Ajusta el margen según sea necesario */
+    /*padding: 0 10px; /* Ajusta el relleno según sea necesario */
+    max-width: 1000px;
 }
 
-.rbc-active {
-    background: yellow !important;
+.rbc-toolbar button {
+    font-size: 1rem; /* Ajusta el tamaño de fuente según sea necesario */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.rbc-btn-group {
+    display: flex;
+    align-items: center; 
+}
+
+.rbc-btn-group button {
+    margin: 0 5px; /* Ajusta el margen entre botones según sea necesario */
+}
+
+.rbc-calendar {
+    width: 60%;
+    display: flex;
+    flex-direction: column; /* Cambiado a 'column' para que los botones estén debajo del calendario */
+    align-items: center; /* Alineados al centro */
+}
+
+.rbc-month-view {
+    width: 100%;
+    max-width: 1000px; /* Ajusta el ancho máximo según sea necesario */
+}
+
+
+.rbc-row-bg {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.rbc-header {
+    flex: 1;
+    text-align: center;
     padding: 10px;
+    
 }
 
 .rbc-day-bg {
-    background: wheat;
-    padding: 40px;
+    flex: 1;
+    /*background: wheat;*/
+    text-align: center;
+    padding: 10px;
 }

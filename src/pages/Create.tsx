@@ -9,7 +9,7 @@ import { Calendar, dayjsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import dayjs from "dayjs";
 import { CiCalendarDate } from "react-icons/ci";
-import "dayjs/locale/es"
+import "dayjs/locale/en"
 
 dayjs.locale("es");
 
@@ -37,25 +37,7 @@ const Tab2: React.FC = () => {
     },
   ];
   
-  {/*return (
-    <IonPage>
-      <IonContent fullscreen>
-        <div className="description">
-          <p>Generate outfits for ... <br />
-            Choose the occasion that best fits your day. </p>
-        </div>
-        <div className="generate">
-          <div className="card-outfit">
-              <img src={cloud_icon} alt="" />
-
-              <p>Casual</p>
-          </div>
-        </div>
-        
-      </IonContent>
-    </IonPage>
-  );*/}
-
+  
   const handleNavigate = (newDate: Date) => {
     console.log("New date:", newDate);
     setCurrentDate(newDate);
@@ -89,11 +71,23 @@ const Tab2: React.FC = () => {
 
   return (
     <div
-      style={{
-        height: "95vh",
-        width: "70vw",
-      }}
+    style={{
+     /* height: "95vh",
+      display: "flex",
+      //flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",*/
+      
+      height: "95vh",
+      width: "80vw",
+      //display: "flex",
+      //flexDirection: "column",
+      //justifyContent: "center",
+      alignItems: "center",
+      margin: "auto"
+    }}
     >
+      
       <Calendar
         localizer={localizer}
         events={events}
@@ -106,13 +100,14 @@ const Tab2: React.FC = () => {
         onNavigate={handleNavigate}
         //min={dayjs("2023-12-23T08:00:00").toDate()}
        // max={dayjs("2023-12-23T18:00:00").toDate()}
+       components={components}
+       style={{ maxWidth: "50%" }}
         formats={{
           dayHeaderFormat: (date) => {
             console.log(date);
             return dayjs(date).format("DD/MM/YYYY");
           },
         }}
-        components={components}
       />
     </div>
   );
