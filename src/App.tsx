@@ -54,13 +54,13 @@ const App: React.FC = () => (
       <IonTabs className='tabs'>
         <IonRouterOutlet>
           <Route path="/login">
-           <Login/> 
+            <Login/> 
           </Route>
           <Route exact path="/register">
            <Register/> 
           </Route>
           <Route exact path="/home">
-            <Home />
+            <Home/>
           </Route>
           <Route exact path="/create">
             <Create />
@@ -71,33 +71,35 @@ const App: React.FC = () => (
           <Route path="/add">
             <Add />
           </Route>
-          {/*<Route exact path="/">
-            <Redirect to="/landing" />
-        </Route>*/}
           <Route exact path="/">
             <Redirect to="/login" />
           </Route>
-        </IonRouterOutlet>
+    </IonRouterOutlet>
+        
         <IonTabBar slot="bottom">
           <IonTabButton tab="tab1" href="/home">
             <IonIcon aria-hidden="true" icon={home} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
+
           <IonTabButton tab="tab2" href="/create">
             <IonIcon className='icons-svg' aria-hidden="true" icon={calendar} />
             <IonLabel>Planner Book</IonLabel>
           </IonTabButton>
+          
           <IonTabButton tab="tab3" href="/wardrobe">
             <IonIcon className='icons-svg' aria-hidden="true" icon={fileTray} />
             <IonLabel>Management</IonLabel>
           </IonTabButton>
+          
           <IonTabButton tab="tab4" href="/add">
             <IonIcon aria-hidden="true" icon={addCircle} />
             <IonLabel>Add</IonLabel>
           </IonTabButton>
-      </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
+        </IonTabBar>
+        
+</IonTabs>
+</IonReactRouter>
   </IonApp>
 );
 

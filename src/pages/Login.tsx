@@ -24,7 +24,7 @@ const Login: React.FC = () => {
             <Email_input></Email_input>
         </div>
 
-        <div className="social-media">
+        {/*<div className="social-media">
           <h3>Login with Social Media</h3>
           <div className="container-logos">
             <div className="facebook">
@@ -34,9 +34,9 @@ const Login: React.FC = () => {
               <img className="logo-social" alt='Hola' src={google} />
             </div>
           </div>
-        </div>
-      </div>
-      <div className="right-column">
+  </div>*/}
+  </div>
+          <div className="right-column">
             {/* Contenedor del lado derecho con color naranja */}
             
           </div>
