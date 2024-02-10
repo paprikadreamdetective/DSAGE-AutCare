@@ -8,7 +8,7 @@ import cloud_icon from '../assets/cloud.png'
 import '../firebaseConfig'
 
 import Links  from '../components/Links';
-
+import insertForm from '../components/insertForm';
 
 const Tab4: React.FC = () => {
   
@@ -23,6 +23,7 @@ const Tab4: React.FC = () => {
 
     <IonPage>
       <IonContent fullscreen>
+      
         <Links></Links>
       </IonContent>
     </IonPage>

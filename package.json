@@ -33,6 +33,7 @@
     "firebase": "^10.7.1",
     "history": "^4.9.0",
     "ionicons": "^7.0.0",
+    "mobiscroll-react": "^4.0.0",
     "react": "^18.2.0",
     "react-big-calendar": "^1.9.1",
     "react-calendar": "^4.8.0",

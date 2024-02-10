@@ -98,11 +98,11 @@ const Tab2: React.FC = () => {
       />
       </div>*///}
 
-    <div style={{ display: "flex", height: "100%" }}>
+    <div style={{ display: "flex", width: "120%", height: "100%" }}>
       <div style={{ flex: 3, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
         <IonButton routerLink="/home">Volver al inicio</IonButton>
       </div>
-      <div style={{ flex: 15, display: "flex", justifyContent: "center", alignItems: "center", height: "90vh" , margin: "auto"}}>
+      <div style={{ flex: 10, display: "flex", justifyContent: "center",  width: "100vw", height: "90vh" , margin: "auto"}}>
         <Calendar
           localizer={localizer}
           events={events}

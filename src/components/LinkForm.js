@@ -13,11 +13,17 @@ const LinkForm = (props) => {
     // const apiKey = 'aTG5BZzJ7Y7FnXVYxTxPHvyg'
 
     const initialValues = {
-        tipo: '',
-        clima: '',
+        clave_vehiculo: '',
+        nombre_propietario: '',
+        telefono: '',
+        marca: '',
+        modelo: '',
+        ano: '',
         color: '',
-        categoria: '',
-        url: ''
+        tipo_combustible: '',
+        fecha: '',
+        hora: '',
+        costo: ''
     }
 
     const [file, setFile] = useState(null);
@@ -108,7 +114,7 @@ const LinkForm = (props) => {
           }
         };*/
 
-        if (!file) {
+       /*if (!file) {
         alert('Select a file first');
         return;
         }
@@ -133,9 +139,24 @@ const LinkForm = (props) => {
         // console.log('resultObject = ', resultObject);
         } catch (error) {
         console.error('Error uploading file:', error);
+        }*/
+        const formData = new FormData();
+        formData.append('file', file);
+        Object.entries(values).forEach(([key, value]) => {
+            formData.append(key, value);
+        });
+        try {
+            const response = await fetch('http://192.168.100.136:5000/save-cita', {
+                method: 'POST',
+                body: formData,
+            });
+            const result = await response.text();
+            const resultObject = JSON.parse(result);
+            setValues({ ...initialValues }); // Limpiamos los valores después de enviarlos
+            console.log('Datos enviados exitosamente');
+        } catch (error) {
+            console.error('Error al enviar datos:', error);
         }
-
-
     };
 
 
@@ -152,11 +173,19 @@ const LinkForm = (props) => {
             <section className="form-register">
                 <h4>Añadir Prenda</h4>
 
-                <input className="controls" type="text" name="tipo" placeholder="Tipo" onChange={handleInputChange} value={values.tipo}></input>
-                <input className="controls" type="text" name="clima" placeholder="Clima" onChange={handleInputChange} value={values.clima}></input>
+                <input className="controls" type="text" name="clave_vehiculo" placeholder="Clave del Vehículo" onChange={handleInputChange} value={values.clave_vehiculo}></input>
+                <input className="controls" type="text" name="nombre_propietario" placeholder="Nombre del Propietario" onChange={handleInputChange} value={values.nombre_propietario}></input>
+                <input className="controls" type="text" name="telefono" placeholder="Teléfono" onChange={handleInputChange} value={values.telefono}></input>
+                <input className="controls" type="text" name="marca" placeholder="Marca" onChange={handleInputChange} value={values.marca}></input>
+                <input className="controls" type="text" name="modelo" placeholder="Modelo" onChange={handleInputChange} value={values.modelo}></input>
+                <input className="controls" type="text" name="ano" placeholder="Año" onChange={handleInputChange} value={values.ano}></input>
                 <input className="controls" type="text" name="color" placeholder="Color" onChange={handleInputChange} value={values.color}></input>
-                <input className="controls" type="text" name="categoria" placeholder="Categoria" onChange={handleInputChange} value={values.categoria}></input>
-                <input className="image-inputs" type="file" name="image" onChange={e => setFile(e.target.files[0])}></input>
+                <input className="controls" type="text" name="tipo_combustible" placeholder="Tipo de Combustible" onChange={handleInputChange} value={values.tipo_combustible}></input>
+                <input className="controls" type="date" name="fecha" placeholder="Fecha" onChange={handleInputChange} value={values.fecha}></input>
+                <input className="controls" type="time" name="hora" placeholder="Hora" onChange={handleInputChange} value={values.hora}></input>
+                <input className="controls" type="number" name="costo" placeholder="Costo" onChange={handleInputChange} value={values.costo}></input>
+                
+                {/*<input className="image-inputs" type="file" name="image" onChange={e => setFile(e.target.files[0])}></input>*/}
 
                 {/* <input type="file" name="image" onChange={async (e) => {const res = await uploadFile(e.target.files[0]); console.log('AL cargar:',res)}} value={values.url}></input> */}
 
