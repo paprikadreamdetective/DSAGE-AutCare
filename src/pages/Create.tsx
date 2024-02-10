@@ -68,15 +68,30 @@ const Tab2: React.FC = () => {
       /*then(data => setCitas(data))
       .catch(error => console.error('Error fetching citas:', error));*/
   }, []);
-  
+  /*
   const mapCitasToEvents = (citas: Cita[]): any[] => {
     return citas.map(cita => ({
-      start: dayjs("${cita.fecha}T${cita.hora}").toDate(),//new Date('${cita.fecha}T${cita.hora}'), // Concatenar fecha y hora para crear un objeto Date
-      //end: new Date('${cita.fecha}T${cita.hora}'), // Igual que start para mantenerlo como un evento de una sola hora
-      end: dayjs("${cita.fecha}T$23:00:00").toDate(),//new Date("${cita.fecha}T$23:00:00"),
-      title: 'Cita - ${cita.clave_vehiculo}',
+      
+
+      start: dayjs(`${cita.fecha}T${cita.hora}`).toDate(),
+      end: dayjs(`${cita.fecha}T$23:00:00`).toDate(),
+      title: `Cita - ${cita.clave_vehiculo}`,
     }));
+  };*/
+
+  const mapCitasToEvents = (citas: Cita[]): any[] => {
+    return citas.map(cita => {
+      // Verificar el formato de las fechas y horas antes de la conversión
+      console.log('Fecha y hora de la cita:', cita.fecha, cita.hora);
+      
+      return {
+        start: dayjs(`${cita.fecha}T${cita.hora}`).toDate(),
+        end: dayjs(`${cita.fecha}T23:00:00`).toDate(), // Supongo que aquí deseas que el evento termine a las 23:00
+        title: `Cita - ${cita.clave_vehiculo}`,
+      };
+    });
   };
+  
 
   const handleNavigate = (newDate: Date) => {
     console.log("New date:", newDate);
