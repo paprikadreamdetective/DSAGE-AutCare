@@ -173,7 +173,7 @@ const Tab2: React.FC = () => {
 
   return (
 
-    <div style={{ display: "flex", width: "100%", height: "100%" }}>
+    <div style={{ display: "flex", width: "130%", height: "100%" }}>
       <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
 
         <div>
@@ -220,14 +220,17 @@ const Tab2: React.FC = () => {
               */}
       
       
+          <IonButton routerLink="/home">Volver al inicio</IonButton>
         </div>
         
-          <IonButton routerLink="/home">Volver al inicio</IonButton>
       </div>
-      <div id="cita-info-container" style={{ flex: 7, backgroundColor: "beige", padding: "30px", border: "1px solid #ccc" }}>
+   
+      <div id="cita-info-container" style={{ flex: 7, backgroundColor: "beige", padding: "30px", border: "5px solid #ccc" }}>
         {/* Aquí se mostrará la información de la cita al hacer clic en un evento del calendario */}
       </div>
-      <div style={{ flex: 30, display: "flex", justifyContent: "center",  width: "100vw", height: "90vh" , margin: "auto"}}>
+
+      
+      <div style={{ flex: 40, display: "flex",  width: "100vw", height: "90vh" , margin: "auto"}}>
         <Calendar
           localizer={localizer}
           events={events}
