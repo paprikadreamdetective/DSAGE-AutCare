@@ -105,6 +105,36 @@ const Tab2: React.FC = () => {
     console.log("Evento clickeado:", event);
     // Aquí puedes mostrar la información del evento en el contenedor del botón
     // Puedes usar un estado para almacenar la información del evento y mostrarla en el contenedor del botón
+    const cita = citas.find((c: Cita) => c.clave_vehiculo === event.title.split(' - ')[1]);
+  if (cita) {
+    // Mostrar la información de la cita en un contenedor con estilo
+    const citaInfoContainer = document.createElement('div');
+    citaInfoContainer.style.backgroundColor = 'beige';
+    citaInfoContainer.style.padding = '10px';
+    citaInfoContainer.style.border = '1px solid #ccc';
+    citaInfoContainer.innerHTML = `
+      <h3>Información de la Cita</h3>
+      <p><strong>Clave de Vehículo:</strong> ${cita.clave_vehiculo}</p>
+      <p><strong>Nombre del Propietario:</strong> ${cita.nombre_propietario}</p>
+      <p><strong>Teléfono:</strong> ${cita.telefono}</p>
+      <p><strong>Marca:</strong> ${cita.marca}</p>
+      <p><strong>Modelo:</strong> ${cita.modelo}</p>
+      <p><strong>Año:</strong> ${cita.ano}</p>
+      <p><strong>Color:</strong> ${cita.color}</p>
+      <p><strong>Tipo de Combustible:</strong> ${cita.tipo_combustible}</p>
+      <p><strong>Fecha:</strong> ${cita.fecha}</p>
+      <p><strong>Hora:</strong> ${cita.hora}</p>
+      <p><strong>Costo:</strong> ${cita.costo}</p>
+      <p><button class="custom-button">Haz clic aquí</button></p>
+    `;
+    
+    // Limpiar el contenedor existente antes de agregar el nuevo
+    const infoContainer = document.getElementById('cita-info-container');
+    if (infoContainer) {
+      infoContainer.innerHTML = '';
+      infoContainer.appendChild(citaInfoContainer);
+    }
+  }
   };
 
 
@@ -143,12 +173,11 @@ const Tab2: React.FC = () => {
 
   return (
 
-    <div style={{ display: "flex", width: "120%", height: "100%" }}>
-      <div style={{ flex: 3, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+    <div style={{ display: "flex", width: "100%", height: "100%" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
 
-        <IonButton routerLink="/home">Volver al inicio</IonButton>
         <div>
-          <h2>Registros de la base de datos:</h2>
+        {/*  <h2>Registros de la base de datos:</h2>
           <table className="table table-hover table-dark">
             <thead >
                 <tr>
@@ -161,7 +190,7 @@ const Tab2: React.FC = () => {
             </thead>
             <tbody>
                 {citas.map(item => (
-                    <tr  key={item.id.toString()}>
+                  <tr  key={item.id.toString()}>
                         <th  className="text-center">{item.id}</th>
                         <td>{item.clave_vehiculo}</td>
                         <td>{item.color}</td>
@@ -171,26 +200,34 @@ const Tab2: React.FC = () => {
                     </tr>
                 ))}
             </tbody>
-        </table>
+        </table>}
             {/*{citas.map((cita, index) => (
               <li key={index}>
-                <strong>Clave de Vehículo:</strong> {cita.clave_vehiculo}<br />
-                <strong>Nombre del Propietario:</strong> {cita.nombre_propietario}<br />
-                <strong>Teléfono:</strong> {cita.telefono}<br />
-                <strong>Marca:</strong> {cita.marca}<br />
-                <strong>Modelo:</strong> {cita.modelo}<br />
-                <strong>Año:</strong> {cita.ano}<br />
-                <strong>Color:</strong> {cita.color}<br />
-                <strong>Tipo de Combustible:</strong> {cita.tipo_combustible}<br />
-                <strong>Fecha:</strong> {cita.fecha}<br />
+              <strong>Clave de Vehículo:</strong> {cita.clave_vehiculo}<br />
+              <strong>Nombre del Propietario:</strong> {cita.nombre_propietario}<br />
+              <strong>Teléfono:</strong> {cita.telefono}<br />
+              <strong>Marca:</strong> {cita.marca}<br />
+              <strong>Modelo:</strong> {cita.modelo}<br />
+              <strong>Año:</strong> {cita.ano}<br />
+              <strong>Color:</strong> {cita.color}<br />
+              <strong>Tipo de Combustible:</strong> {cita.tipo_combustible}<br />
+              <strong>Fecha:</strong> {cita.fecha}<br />
                 <strong>Hora:</strong> {cita.hora}<br />
                 <strong>Costo:</strong> {cita.costo}<br />
               </li>
-            ))}*/}
+            ))}
           
+              */}
+      
+      
         </div>
+        
+          <IonButton routerLink="/home">Volver al inicio</IonButton>
       </div>
-      <div style={{ flex: 10, display: "flex", justifyContent: "center",  width: "100vw", height: "90vh" , margin: "auto"}}>
+      <div id="cita-info-container" style={{ flex: 7, backgroundColor: "beige", padding: "30px", border: "1px solid #ccc" }}>
+        {/* Aquí se mostrará la información de la cita al hacer clic en un evento del calendario */}
+      </div>
+      <div style={{ flex: 30, display: "flex", justifyContent: "center",  width: "100vw", height: "90vh" , margin: "auto"}}>
         <Calendar
           localizer={localizer}
           events={events}
@@ -200,7 +237,7 @@ const Tab2: React.FC = () => {
           defaultView="month"
           onNavigate={handleNavigate}
           components={components}
-          style={{ maxWidth: "50%" }}
+          style={{ maxWidth: "70%" }}
           formats={{
             dayHeaderFormat: (date) => {
               console.log(date);
