@@ -35,6 +35,7 @@ const Tab2: React.FC = () => {
   //const [people, setPeople] = useState<Person[]>([]);
   //const [selectedEvent, setSelectedEvent] = useState<any>(null);
   const localizer = dayjsLocalizer(dayjs);
+  const [imageUrl, setImageUrl] = useState<string>('');
   /*
   const event1 = [
     {
@@ -101,7 +102,21 @@ const Tab2: React.FC = () => {
     // como actualizar el estado para mostrar eventos del nuevo período.
   };
 
-  const handleEventClick = (event: any) => {
+  const fetchCarImage = async (brand: string, model: string) => {
+    try {
+      // Realizar la solicitud a la API de Unsplash
+      const response = await fetch(`https://api.unsplash.com/search/photos?query=${brand}+${model}+car&per_page=3&client_id=2uFxrXSq-ToB6kuYtPsEn15Q-FaaqrGr3THiGahf8SA`);
+      const data = await response.json();
+      // Obtener las URL de las imágenes de autos
+      return data.results[0]?.urls?.regular || '';
+      
+    } catch (error) {
+      console.error('Error fetching car images:', error);
+      return [];
+    }
+  };
+
+  const handleEventClick = async (event: any) => {
     console.log("Evento clickeado:", event);
     // Aquí puedes mostrar la información del evento en el contenedor del botón
     // Puedes usar un estado para almacenar la información del evento y mostrarla en el contenedor del botón
@@ -127,7 +142,9 @@ const Tab2: React.FC = () => {
       <p><strong>Costo:</strong> ${cita.costo}</p>
       <p><button class="custom-button">Haz clic aquí</button></p>
     `;
-    
+    // Buscar imágenes de autos y mostrarlas debajo de la información de la cita
+    const url = await fetchCarImage(cita.marca, cita.modelo);
+    setImageUrl(url);
     // Limpiar el contenedor existente antes de agregar el nuevo
     const infoContainer = document.getElementById('cita-info-container');
     if (infoContainer) {
@@ -221,16 +238,24 @@ const Tab2: React.FC = () => {
       
       
           <IonButton routerLink="/home">Volver al inicio</IonButton>
+          
         </div>
-        
+        <div>
+      {/* Mostrar la imagen si imageUrl no es una cadena vacía */}
+      {imageUrl && <img src={imageUrl} alt="Imagen de auto" />}
+      {/* Resto del código... */}
+    </div>
       </div>
    
-      <div id="cita-info-container" style={{ flex: 7, backgroundColor: "beige", padding: "30px", border: "5px solid #ccc" }}>
+      <div id="cita-info-container" style={{ flex: 7, backgroundColor: "beige", padding: "30px", border: "1px solid #ccc" }}>
         {/* Aquí se mostrará la información de la cita al hacer clic en un evento del calendario */}
+        
+    
+  
       </div>
 
       
-      <div style={{ flex: 40, display: "flex",  width: "100vw", height: "90vh" , margin: "auto"}}>
+      <div style={{ flex: 15, display: "flex",  width: "90vw", height: "90vh" , margin: "auto", marginLeft: "50px"}}>
         <Calendar
           localizer={localizer}
           events={events}

@@ -20,10 +20,13 @@ import { addCircle, body, book, calendar, ellipse, fileTray, home, settingsOutli
 import ExploreContainer from '../components/ExploreContainer';
 import Navbar from '../components/navbar';
 import './Tab1.css';
+import './Tab3.css';
 import Sidebar from '../components/sidebar';
 import './Login.css';
 import Calendar from '../components/calendar';
 import Weather from '../components/weatherComponent';
+
+import CarruselPrendas from '../components/carruselPrendas';
 
 import WeatherApp from '../WeatherApp/WeatherApp'
 
@@ -72,12 +75,12 @@ const Tab1: React.FC = () => {
   ></SugerenciaDia>
   </div>*/}
             </div>
-            <div className="prendas-faltantes">
-              <p> Post </p>
-              
-            </div>
           </div>
       {/* Botón para volver a la página de login */}
+      <div >
+        <p style={{textAlign: 'center'}}> Post </p>
+          <CarruselPrendas/>
+      </div> 
       <div className="buttons-container">
         <IonButton className='button-signin-logout' onClick={handleBackToLogin}>Logout</IonButton>
 

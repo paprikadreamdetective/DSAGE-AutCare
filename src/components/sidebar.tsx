@@ -19,10 +19,10 @@ const Sidebar = () => {
                 <IonLabel>Planner Book</IonLabel>
             </IonItem>
             <IonItem href='/wardrobe'>
-                <IonLabel>Management</IonLabel>
+                <IonLabel>Post it!</IonLabel>
             </IonItem>
             <IonItem href='/add'>
-                <IonLabel>Post it!</IonLabel>
+                <IonLabel>Management</IonLabel>
             </IonItem>
         </IonList>
     </div>
