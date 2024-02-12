@@ -36,20 +36,24 @@ const Navbar = () => {
     return(
         <div className="navbar">
             <IonItem href='/home' >
-            <IonIcon aria-hidden="true" icon={home} />
-                <IonLabel className='custom-button'>Home</IonLabel>
+                <IonLabel className='custom-button'>Home
+                    <IonIcon aria-hidden="true" icon={home} />
+                </IonLabel>
             </IonItem>
             <IonItem href='/create' className={`nav-button ${activeMenu === 'home' ? 'active' : ''}`}>
-            <IonIcon className='icons-svg' aria-hidden="true" icon={calendar} />
-                <IonLabel>Planner Book</IonLabel>
+                <IonLabel className='custom-button'>Planner Book
+                    <IonIcon className='icons-svg' aria-hidden="true" icon={calendar} />
+                </IonLabel>
             </IonItem>
             <IonItem href='/wardrobe' className={`nav-button ${activeMenu === 'home' ? 'active' : ''}`}>
-            <IonIcon aria-hidden="true" icon={pencil} />
-                <IonLabel>Post it!</IonLabel>
+                <IonLabel className='custom-button'>Post it!
+                    <IonIcon aria-hidden="true" icon={pencil} />
+                </IonLabel>
             </IonItem>
             <IonItem href='/add' className={`nav-button ${activeMenu === 'home' ? 'active' : ''}`}>
-                <IonIcon className='icons-svg' aria-hidden="true" icon={fileTray} />
-                <IonLabel>Management</IonLabel>
+                <IonLabel className='custom-button'>Management
+                    <IonIcon className='icons-svg' aria-hidden="true" icon={fileTray} />
+                </IonLabel>
             </IonItem>
         </div>
     );
