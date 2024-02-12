@@ -19,7 +19,7 @@ import Home from './pages/Home';
 import Create from './pages/Create';
 import Wardrobe from './pages/Wardrobe';
 import Add from './pages/Add';
-
+import Update from './pages/Update';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -44,6 +44,7 @@ import './app.css'
 import facebook from './assets/facebook-logo.svg'
 import create from './assets/create-icon.svg'
 import closet from './assets/closet-icon.svg'
+
 
 setupIonicReact();
 
@@ -70,6 +71,9 @@ const App: React.FC = () => (
           </Route>
           <Route path="/add">
             <Add />
+          </Route>
+          <Route path="/update">
+            <Update />
           </Route>
           <Route exact path="/">
             <Redirect to="/login" />

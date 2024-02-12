@@ -9,7 +9,7 @@ import axios from 'axios';
 
 // API key: aTG5BZzJ7Y7FnXVYxTxPHvyg
 
-const LinkForm = (props) => {
+const UpdateForm = (props) => {
     // const apiKey = 'aTG5BZzJ7Y7FnXVYxTxPHvyg'
 
     const initialValues = {
@@ -45,7 +45,7 @@ const LinkForm = (props) => {
             formData.append(key, value);
         });
         try {
-            const response = await fetch('http://192.168.100.136:5000/save-cita', {
+            const response = await fetch('http://192.168.100.136:5000/update-cita', {
                 method: 'POST',
                 body: formData,
             });
@@ -62,7 +62,7 @@ const LinkForm = (props) => {
         <>
         <div className="content-inputs">
             <section className="form-register">
-                <h4>Agendar Cita</h4>
+                <h4>Actualizar Cita</h4>
 
                 <input className="controls" type="text" name="clave_vehiculo" placeholder="Clave del Vehículo" onChange={handleInputChange} value={values.clave_vehiculo}></input>
                 <input className="controls" type="text" name="nombre_propietario" placeholder="Nombre del Propietario" onChange={handleInputChange} value={values.nombre_propietario}></input>
@@ -80,15 +80,15 @@ const LinkForm = (props) => {
 
                 {/* <input type="file" name="image" onChange={async (e) => {const res = await uploadFile(e.target.files[0]); console.log('AL cargar:',res)}} value={values.url}></input> */}
 
-                <button className="botons" onClick={handleSubmit}>Save</button>
+                <button className="botons" onClick={handleSubmit}>Update</button>
             </section>
         </div>
         </>
     )
 }
-
-LinkForm.propTypes = {
+/*
+UpdateForm.propTypes = {
     addOrEdit: PropTypes.func.isRequired,
-};
+};*/
 
-export default LinkForm;
+export default UpdateForm;
