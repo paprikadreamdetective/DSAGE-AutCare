@@ -1,0 +1,21 @@
+/* App.css */
+.content-container {
+    margin-left: 300px; /* Ancho del sidebar */
+  
+}
+  
+ion-header {
+    position: -webkit-sticky; /* Para navegadores basados en WebKit */
+    position: sticky; /* Para navegadores que admiten la propiedad sticky */
+    top: 0;
+    width: 100%;
+    z-index: 2; 
+    /*z-index: 1000; /* Asegura que la barra de menú esté encima del contenido */
+  }
+
+  
+ion-content {
+    /*position:relative; /* Establece la posición relativa para que los elementos absolutos dentro de él se posicionen con respecto a él */
+    z-index: 0; /* Establece un valor de z-index menor para que los elementos dentro de ion-content no estén por encima del ion-header */
+    
+}

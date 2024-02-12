@@ -103,7 +103,7 @@ const CarruselPrendas = () => {
         </>
     )*/
     return (
-      <div className="carruselApp" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <div className="carruselApp" style={{ maxWidth: '1300px', margin: '0 auto' }}>
           <Carousel showDots={true} responsive={responsive}>
               {ropa.map((prenda, index) => (
                   

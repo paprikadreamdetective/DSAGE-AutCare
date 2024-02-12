@@ -25,7 +25,7 @@ import Sidebar from '../components/sidebar';
 import './Login.css';
 import Calendar from '../components/calendar';
 import Weather from '../components/weatherComponent';
-
+import Example from '../components/sidebar_menu';
 import CarruselPrendas from '../components/carruselPrendas';
 
 import WeatherApp from '../WeatherApp/WeatherApp'
@@ -53,11 +53,16 @@ const Tab1: React.FC = () => {
 
   return (
     <IonPage>
-      <IonContent>
+      <Navbar></Navbar>
+      <IonContent >
+      
+        {/*<Example></Example>*/}
+        
+
         <div className="content-wrapper">
-          <div className="sidebar">
-            <Sidebar></Sidebar>
-          </div>
+          
+          
+          
         <div className="content">
           
           <div className="weather-section">
@@ -85,10 +90,11 @@ const Tab1: React.FC = () => {
         <IonButton className='button-signin-logout' onClick={handleBackToLogin}>Logout</IonButton>
 
       </div>
+      
         </div>
 
-
       </div>
+      
       </IonContent>
     </IonPage>
   );
