@@ -20,6 +20,7 @@ import Create from './pages/Create';
 import Wardrobe from './pages/Wardrobe';
 import Add from './pages/Add';
 import Update from './pages/Update';
+import Delete from './pages/Delete'
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -74,6 +75,9 @@ const App: React.FC = () => (
           </Route>
           <Route path="/update">
             <Update />
+          </Route>
+          <Route path="/delete">
+            <Delete />
           </Route>
           <Route exact path="/">
             <Redirect to="/login" />
