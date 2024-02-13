@@ -10,6 +10,7 @@ import '../firebaseConfig'
 import Links  from '../components/Links';
 import DeleteForm from '../components/deleteForm';
 import UpdateForm from '../components/updateForm';
+import '../components/bottonbar.css';
 
 import insertForm from '../components/insertForm';
 
@@ -30,12 +31,14 @@ const Tab4: React.FC = () => {
         {activeTab === 'delete' && <DeleteForm />}
         {activeTab === 'update' && <UpdateForm />}
       </IonContent>
-      <IonFooter>
-        <IonToolbar>
-          <IonButton onClick={() => setActiveTab('links')}>Agendar Cita</IonButton>
-          <IonButton onClick={() => setActiveTab('delete')}>Cancelar Cita</IonButton>
-          <IonButton onClick={() => setActiveTab('update')}>Actualizar Cita</IonButton>
-        </IonToolbar>
+      <IonFooter class='ion-footer'>
+        {/*<IonToolbar className="ion-justify-content-center">*/}
+        <div className="button-container-botton">
+          <IonButton className="ion-button" onClick={() => setActiveTab('links')}>Agendar Cita</IonButton>
+          <IonButton className="ion-button" onClick={() => setActiveTab('delete')}>Cancelar Cita</IonButton>
+          <IonButton className="ion-button" onClick={() => setActiveTab('update')}>Actualizar Cita</IonButton>
+        </div>
+        {/*</IonToolbar>*/}
       </IonFooter>
 
 

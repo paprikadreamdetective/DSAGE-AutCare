@@ -1,0 +1,34 @@
+/* Tab4.css */
+.botton-bar{
+    background-color: #ffff;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #ffff;
+    display: flex; /* Usamos flexbox */
+    justify-content: center; /* Centramos los elementos horizontalmente */
+}
+/* Estilos para los botones en el pie de página */
+/* Estilos para los botones en el pie de página */
+.ion-footer .ion-button {
+    background-color: #ffff;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #ffff;
+    display: flex; /* Usamos flexbox */
+    margin: 0 20px; /* Espacio entre los botones */
+    font-size: 20px; /* Tamaño de la fuente de los botones */
+    color: white; /* Color del texto de los botones */
+    --background: #f47820; /* Color de fondo de los botones */
+    --ion-color-base: #f47820; /* Cambia el color de los botones */
+    transition: background-color 0.3s, color 0.3s;
+}
+/* Estilos para el contenedor de los botones */
+.button-container-botton {
+    
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Espacio superior */
+  }
+  
+  /* Estilos opcionales para el contenido principal */
+  ion-content {
+    padding: 30px; /* Relleno interior */
+  }
