@@ -73,13 +73,15 @@ const DeleteForm = () => {
         <>
             <div className="content-inputs">
                 <section className="form-register">
-                    <h4>Cancelar Cita</h4>
+                    <h4 style={{textAlign: "center"}}>Cancelar Cita</h4>
                     <input className="controls" type="text" name="clave_vehiculo" placeholder="Clave del Vehículo" onChange={handleInputChange} value={values.clave_vehiculo}></input>
                     {/* Inputs del formulario */}
                     {/* ... */}
                     {/*<button className="botons" onClick={handleSubmit}>Update</button>*/}
                     {/* Botón de eliminación */}
-                    <button className="botons" onClick={handleDelete}>Delete</button>
+                    <div className="button-container">
+                        <button className="botons" onClick={handleDelete}>Delete</button>
+                    </div>
                 </section>
             </div>
         </>

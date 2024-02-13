@@ -13,12 +13,18 @@
     padding: 1rem 2rem;
     border-bottom: 1px solid #ffff;
     display: flex; /* Usamos flexbox */
-    margin: 0 20px; /* Espacio entre los botones */
-    font-size: 20px; /* Tamaño de la fuente de los botones */
+    margin: 0 10px; /* Espacio entre los botones */
+    font-size: 15px; /* Tamaño de la fuente de los botones */
     color: white; /* Color del texto de los botones */
     --background: #f47820; /* Color de fondo de los botones */
-    --ion-color-base: #f47820; /* Cambia el color de los botones */
+    --ion-color-base: #ffffff; /* Cambia el color de los botones */
     transition: background-color 0.3s, color 0.3s;
+}
+
+
+.ion-button:hover {
+    /*background-color: #e06000;*/
+    color: #ffffff;
 }
 /* Estilos para el contenedor de los botones */
 .button-container-botton {

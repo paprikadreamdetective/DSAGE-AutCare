@@ -25,8 +25,8 @@ const Tab4: React.FC = () => {
   return (
 
 
-    <IonPage>
-      <IonContent fullscreen>
+    <IonPage style={{ marginTop: '90px' }}>
+      <IonContent >
         {activeTab === 'links' && <Links />}
         {activeTab === 'delete' && <DeleteForm />}
         {activeTab === 'update' && <UpdateForm />}
