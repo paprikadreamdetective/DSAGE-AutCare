@@ -7,16 +7,6 @@ import axios from 'axios';
 const DeleteForm = () => {
     const initialValues = {
         clave_vehiculo: '',
-        nombre_propietario: '',
-        telefono: '',
-        marca: '',
-        modelo: '',
-        ano: '',
-        color: '',
-        tipo_combustible: '',
-        fecha: '',
-        hora: '',
-        costo: ''
     };
 
     const [values, setValues] = useState(initialValues);
@@ -25,7 +15,7 @@ const DeleteForm = () => {
         const { name, value } = e.target;
         setValues({...values, [name]: value});
     };
-    
+    /*
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
@@ -33,7 +23,7 @@ const DeleteForm = () => {
             formData.append(key, value);
         });
         try {
-            const response = await fetch('http://192.168.100.136:5000/update-cita', {
+            const response = await fetch('http://192.168.100.136:5000/delete-cita', {
                 method: 'POST',
                 body: formData,
             });
@@ -44,9 +34,30 @@ const DeleteForm = () => {
         } catch (error) {
             console.error('Error al enviar datos:', error);
         }
-    };
+    };*/
 
-    const handleDelete = async () => {
+    const handleDelete = async (clave_vehiculo) => {
+        try {
+          const response = await fetch(`http://192.168.100.136:5000/delete-cita/${values.clave_vehiculo}`, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          });
+          if (response.ok) {
+            console.log('Cita eliminada correctamente');
+            // Realizar alguna acción adicional si es necesario
+          } else {
+            console.error('Error al eliminar la cita:', response.statusText);
+          }
+        } catch (error) {
+          console.error('Error al eliminar la cita:', error);
+        }
+      };
+
+    /*
+    const handleDelete = async (e) => {
+        e.preventDefault();
         try {
             const response = await axios.delete('http://192.168.100.136:5000/delete-cita', {
                 data: { clave_vehiculo: values.clave_vehiculo } // Suponiendo que la clave del vehículo identifica el registro a eliminar
@@ -56,7 +67,7 @@ const DeleteForm = () => {
         } catch (error) {
             console.error('Error al eliminar datos:', error);
         }
-    };
+    };*/
 
     return (
         <>

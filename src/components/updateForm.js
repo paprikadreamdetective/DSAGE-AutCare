@@ -38,7 +38,25 @@ const UpdateForm = (props) => {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+        try {
+            const response = await fetch('http://192.168.100.136:5000/update-cita', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(values)
+            });
+    
+            if (!response.ok) {
+                throw new Error('Error al enviar datos');
+            }
+    
+            setValues({ ...initialValues }); // Limpiamos los valores después de enviarlos
+            console.log('Datos enviados exitosamente');
+        } catch (error) {
+            console.error('Error al enviar datos:', error);
+        }
+        /*
         const formData = new FormData();
         //formData.append('file', file);
         Object.entries(values).forEach(([key, value]) => {
@@ -55,7 +73,7 @@ const UpdateForm = (props) => {
             console.log('Datos enviados exitosamente');
         } catch (error) {
             console.error('Error al enviar datos:', error);
-        }
+        }*/
     };
 
     return(
