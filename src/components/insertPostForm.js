@@ -57,7 +57,7 @@ const InsertPost = (props) => {
                     name="descripcion" 
                     placeholder="Descripción (máximo 50 palabras)" 
                     rows={20} // Puedes ajustar el número de filas según tu diseño
-                    cols={40}
+                    cols={80}
                     onChange={handleInputChange} 
                     value={values.descripcion}
                     
