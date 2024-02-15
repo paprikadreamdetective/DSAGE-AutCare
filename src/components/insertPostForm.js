@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { IonInput, IonItem, IonList } from "@ionic/react";
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import './LinkForm.css'
+import './insertPostForms.css'
 //import { uploadFile } from "../firebaseConfig";
 // import removeBg from "remove.bg";
 
@@ -14,7 +14,7 @@ const InsertPost = (props) => {
 
     const initialValues = {
         content: '',
-        image_url: '',
+        /*image_url: '',*/
        
     }
 
@@ -49,49 +49,34 @@ const InsertPost = (props) => {
 
     return(
         <>
-        <div className="content-inputs">
-            <section className="form-register">
+        <div className="container">
+            <div className="contenedor-derecho">
                 <h4 style={{textAlign: "center"}}>Post</h4>
                 <textarea 
                     //className="controls" 
-                    name="descripcion" 
+                    name="content" 
                     placeholder="Descripción (máximo 50 palabras)" 
                     rows={20} // Puedes ajustar el número de filas según tu diseño
-                    cols={80}
+                    cols={60}
                     onChange={handleInputChange} 
-                    value={values.descripcion}
+                    value={values.content}
                     
                     maxLength={250} // Definimos un máximo de caracteres permitidos (aproximadamente 50 palabras)
-                    style={{resize: "none"}}
+                    //style={{resize: "none"}}
                 ></textarea>
-                {/*<input className="controls" type="text" name="clave_vehiculo" placeholder="Clave del Vehículo" onChange={handleInputChange} value={values.clave_vehiculo}></input>
-                <input className="controls" type="text" name="nombre_propietario" placeholder="Nombre del Propietario" onChange={handleInputChange} value={values.nombre_propietario}></input>
-                <input className="controls" type="text" name="telefono" placeholder="Teléfono" onChange={handleInputChange} value={values.telefono}></input>
-                <input className="controls" type="text" name="marca" placeholder="Marca" onChange={handleInputChange} value={values.marca}></input>
-                <input className="controls" type="text" name="modelo" placeholder="Modelo" onChange={handleInputChange} value={values.modelo}></input>
-                <input className="controls" type="text" name="ano" placeholder="Año" onChange={handleInputChange} value={values.ano}></input>
-                <input className="controls" type="text" name="color" placeholder="Color" onChange={handleInputChange} value={values.color}></input>
-                <input className="controls" type="text" name="tipo_combustible" placeholder="Tipo de Combustible" onChange={handleInputChange} value={values.tipo_combustible}></input>
-                <input className="controls" type="date" name="fecha" placeholder="Fecha" onChange={handleInputChange} value={values.fecha}></input>
-                <input className="controls" type="time" name="hora" placeholder="Hora" onChange={handleInputChange} value={values.hora}></input>
-                <input className="controls" type="number" name="costo" placeholder="Costo" onChange={handleInputChange} value={values.costo}></input>*/}
-                
-                {/*<input className="image-inputs" type="file" name="image" onChange={e => setFile(e.target.files[0])}></input>*/}
-
-                {/* <input type="file" name="image" onChange={async (e) => {const res = await uploadFile(e.target.files[0]); console.log('AL cargar:',res)}} value={values.url}></input> */}
                 <br></br>
                 
                 <div className="button-container">
                  <button className="botons" onClick={handleSubmit}>Save</button>
                 </div>
-            </section>
+            </div>
+            <div className="contenedor-izquierdo">
+                {/* Aquí va el contenido para visualizar las publicaciones */}
+            </div>
         </div>
         </>
     )
 }
-/*
-InsertPost.propTypes = {
-    addOrEdit: PropTypes.func.isRequired,
-};*/
+
 
 export default InsertPost;

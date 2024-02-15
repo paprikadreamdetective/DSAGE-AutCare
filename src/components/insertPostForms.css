@@ -1,0 +1,67 @@
+/*.container {
+    display: flex;
+    justify-content: space-between;
+}*/
+/*
+.text-container {
+    flex: 1;
+    background-color: lightblue; 
+}*/
+
+/*.text-container, .post-container {
+    flex: 1;
+}*/
+
+
+/*
+.post-container {
+    margin-left: 10px; /* Ajusta el margen entre los contenedores */
+/*    background-color: lightgreen;
+}*/
+/*
+.text-container textarea {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    /*resize: none;*//*
+}*/
+
+/*
+textarea {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    resize: none;
+}
+*/
+
+.contenedor-izquierdo {
+    width: 50%;
+    float: left;
+    background-color: lightblue; /* Cambia el color de fondo según lo necesites */
+    box-sizing: border-box;
+    padding: 20px; /* Ajusta el relleno según lo necesites */
+}
+
+.contenedor-derecho {
+    width: 50%;
+    float: right;
+    background-color: lightgreen; /* Cambia el color de fondo según lo necesites */
+    box-sizing: border-box;
+    padding: 20px; /* Ajusta el relleno según lo necesites */
+}
+
+.contenedor-izquierdo textarea {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    /*resize: none;*//*/*/
+}
+
+
+/* Limpia el float */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
