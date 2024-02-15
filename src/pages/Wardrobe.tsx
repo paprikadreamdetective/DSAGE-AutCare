@@ -4,12 +4,14 @@ import ExploreContainer from '../components/ExploreContainer';
 import './Tab3.css';
 
 import CarruselPrendas from '../components/carruselPrendas';
+import InsertPost from '../components/insertPostForm';
+
 
 const Tab3: React.FC = () => {
   return (
     <IonPage>
       <IonContent fullscreen>
-
+        <InsertPost></InsertPost>
         {/*<div className="section-title">
           Accesories
         </div>

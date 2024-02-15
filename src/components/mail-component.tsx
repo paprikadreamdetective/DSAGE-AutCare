@@ -68,7 +68,7 @@ function Email_input() {
 
     <div className="input-email">
       <IonInput 
-        class='custom2' label="Email: " type="email" placeholder="email@domain.com"
+        class='custom2' label="Email: " type="email" placeholder="email@domain.com"  data-testid="field_user"
         onIonChange={(e:any) => setUsername(e.target.value)}
       ></IonInput>
     </div>
@@ -76,13 +76,13 @@ function Email_input() {
     
     <div className="input-email">
       <IonInput 
-        class='custom2' label="Password: " type="password"
+        class='custom2' label="Password: " type="password"  data-testid="field_pass"
         onIonChange={(e:any) => setPassword(e.target.value)}  
       >
       </IonInput>
     </div>
     
-      <IonButton routerLink='/home' className='button-signin-log' onClick={login}> Login </IonButton>
+      <IonButton  data-testid="sendData" routerLink='/home' className='button-signin-log' onClick={login}> Login </IonButton>
       {/* <IonButton className='button-register' onClick={login}> Log In </IonButton> */}
    
 
