@@ -13,8 +13,8 @@ const InsertPost = (props) => {
     // const apiKey = 'aTG5BZzJ7Y7FnXVYxTxPHvyg'
 
     const initialValues = {
-        post_data: '',
-        post_url_image: '',
+        content: '',
+        image_url: '',
        
     }
 
@@ -53,13 +53,16 @@ const InsertPost = (props) => {
             <section className="form-register">
                 <h4 style={{textAlign: "center"}}>Post</h4>
                 <textarea 
-                    className="controls" 
+                    //className="controls" 
                     name="descripcion" 
                     placeholder="Descripción (máximo 50 palabras)" 
+                    rows={20} // Puedes ajustar el número de filas según tu diseño
+                    cols={40}
                     onChange={handleInputChange} 
                     value={values.descripcion}
-                    rows={4} // Puedes ajustar el número de filas según tu diseño
+                    
                     maxLength={250} // Definimos un máximo de caracteres permitidos (aproximadamente 50 palabras)
+                    style={{resize: "none"}}
                 ></textarea>
                 {/*<input className="controls" type="text" name="clave_vehiculo" placeholder="Clave del Vehículo" onChange={handleInputChange} value={values.clave_vehiculo}></input>
                 <input className="controls" type="text" name="nombre_propietario" placeholder="Nombre del Propietario" onChange={handleInputChange} value={values.nombre_propietario}></input>
